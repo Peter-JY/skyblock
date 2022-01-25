@@ -1,6 +1,6 @@
 # SkyBlock
 
-English | [中文](https://github.com/Peter-JY/Skyblock/blob/main/README_Chinese.md)
+English | [中文](https://github.com/Peter-JY/Skyblock/main/README_Chinese.md)
 
 SkyBlock is a module for [Carpet Mod](https://github.com/gnembon/fabric-carpet), based on [skyrising/skyblock](https://github.com/skyrising/skyblock) and [jsorrell/skyblock](https://github.com/jsorrell/skyblock/).
 
@@ -13,7 +13,7 @@ SkyBlock is a module for [Carpet Mod](https://github.com/gnembon/fabric-carpet),
 ## Installation
 - Install [Fabric](https://fabricmc.net/use)
 - Download [Carpet](https://github.com/gnembon/fabric-carpet/releases)
-- Download [SkyBlock](https://github.com/skyrising/skyblock/releases)
+- Download [SkyBlock](https://github.com/Peter-JY/Skyblock/releases)
 - Place Carpet and SkyBlock into `<minecraft-directory>/mods/`
 
 ## Usage (World Generation)
