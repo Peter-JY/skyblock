@@ -1,6 +1,8 @@
 # SkyBlock
 
-SkyBlock is a module for [Carpet](https://github.com/gnembon/fabric-carpet) originally based on [skyrising/skyblock](https://github.com/skyrising/skyblock) and [jsorrell/skyblock](https://github.com/jsorrell/skyblock/).
+English | [中文](https://github.com/Peter-JY/Skyblock/blob/main/README_Chinese.md)
+
+SkyBlock is a module for [Carpet Mod](https://github.com/gnembon/fabric-carpet), based on [skyrising/skyblock](https://github.com/skyrising/skyblock) and [jsorrell/skyblock](https://github.com/jsorrell/skyblock/).
 
 ## Features
 - Generator for empty worlds, keeping biomes, structure bounding bounding boxes and end portals
