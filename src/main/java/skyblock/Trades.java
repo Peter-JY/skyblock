@@ -53,24 +53,22 @@ public class Trades {
 
         tier1Trades.addAll(Arrays.asList(
             // Duplicatable after one trade
-            newSellItemFactory(Items.CHORUS_FLOWER, 5, 1, 6),
-            newSellItemFactory(Items.NETHER_WART, 1, 1, 12),
-            newSellItemFactory(Items.SWEET_BERRIES, 1, 1, 16),
-            newSellItemFactory(Items.SUNFLOWER, 5, 1, 10),
-            newSellItemFactory(Items.LILAC, 5, 1, 10),
-            newSellItemFactory(Items.ROSE_BUSH, 5, 1, 10),
-            newSellItemFactory(Items.PEONY, 5, 1, 10),
-            newSellItemFactory(Items.NETHER_WART, 1, 1, 12),
-            newsellItemFactory(Items.COCOA_BEANS, 1, 1, 14)
+            newSellItemFactory(Items.CHORUS_FLOWER, 5, 1, 12),
+            newSellItemFactory(Items.NETHER_WART, 5, 1, 12),
+            newSellItemFactory(Items.SWEET_BERRIES, 5, 1, 12),
+            newSellItemFactory(Items.SUNFLOWER, 5, 1, 12),
+            newSellItemFactory(Items.LILAC, 5, 1, 12),
+            newSellItemFactory(Items.ROSE_BUSH, 5, 1, 12),
+            newSellItemFactory(Items.PEONY, 5, 1, 12),
+            newsellItemFactory(Items.COCOA_BEANS, 5, 1, 12)
         ));
 
         tier2Trades.addAll(Arrays.asList(
             // Tier 2 Trades
-            newProcessItemFactory(Items.BUCKET, 1, 16, Items.LAVA_BUCKET, 1, 4),
-            newSellItemFactory(Items.JUKEBOX, 64, 1, 6),
-            newSellItemFactory(Items.HEART_OF_THE_SEA, 64, 1, 6)
+            newProcessItemFactory(Items.BUCKET, 1, 16, Items.LAVA_BUCKET, 1, 1),
+            newSellItemFactory(Items.HEART_OF_THE_SEA, 64, 1, 2)
         ));
     }
 }
-// Removed Crimson Nylium and Warped Nylium.
+// Removed Crimson Nylium,  Warped Nylium and Jukebox.
 // Now you need a Bucket to buy a Lava Bucket.
