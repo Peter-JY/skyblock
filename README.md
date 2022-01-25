@@ -1,6 +1,6 @@
 # SkyBlock
 
-SkyBlock is a module for [QuickCarpet](https://github.com/DeadlyMC/QuickCarpet114)
+SkyBlock is a module for [Carpet](https://github.com/gnembon/fabric-carpet) originally based on [skyrising/skyblock](https://github.com/skyrising/skyblock) and [jsorrell/skyblock](https://github.com/jsorrell/skyblock/).
 
 ## Features
 - Generator for empty worlds, keeping biomes, structure bounding bounding boxes and end portals
@@ -10,9 +10,34 @@ SkyBlock is a module for [QuickCarpet](https://github.com/DeadlyMC/QuickCarpet11
 
 ## Installation
 - Install [Fabric](https://fabricmc.net/use)
-- Download [QuickCarpet](https://github.com/DeadlyMC/QuickCarpet114/releases)
+- Download [Carpet](https://github.com/gnembon/fabric-carpet/releases)
 - Download [SkyBlock](https://github.com/skyrising/skyblock/releases)
-- Place QuickCarpet and SkyBlock into `<minecraft-directory>/mods/`
+- Place Carpet and SkyBlock into `<minecraft-directory>/mods/`
 
 ## Usage (World Generation)
 Since version 3.0.0 the mod will always apply the SkyBlock world generation, regardless of which world type is selected.
+
+--------
+### Additional Features
+
+#### Additional Wandering Trader Trades
+
+###### Tier 1
+| Item          | Price | Trades until disabled |
+| ------------- | ----- | --------------------- |
+| Chrous Flower | 5     | 12                     |
+| Nether Wart   | 5     | 12                    |
+| Sweet Berries | 5     | 12                    |
+| Sunflower     | 5     | 12                    |
+| Lilac         | 5     | 12                    |
+| Rose Bush     | 5     | 12                    |
+| Peony         | 5     | 12                    |
+| Cocoa Beans   | 5     | 12                    |
+
+###### Tier 2
+| Output Item      | Input Item | Price | Trades until disabled |
+| ---------------- | ---------- | ----- | --------------------- |
+| Lava Bucket      | Bucket     | 16    | 1                     |
+| Heart of the Sea |            | 64    | 2                     |
+
+You can buy Pointed Dripstone to craft Dripstone Block, and use these things to make more lava.
