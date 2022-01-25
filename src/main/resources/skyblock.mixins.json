@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "package": "skyblock.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "BrewingRecipeRegistryAccessor",
+    "BrewingRecipeRegistryMixin",
+    "ChunkStatusMixin",
+    "DaylightDetectorBlockEntityMixin",
+    "DaylightDetectorBlockMixin",
+    "EnderDragonFightMixin",
+    "PotionsMixin",
+    "ProtoChunkAccessor",
+    "StructurePieceAccessor"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "skyblock-refmap.json"
+}
