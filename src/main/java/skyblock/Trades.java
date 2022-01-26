@@ -14,59 +14,50 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Trades {
-    public static final Int2ObjectMap<TradeOffers.Factory[]> WANDERING_TRADER_SKYBLOCK_TRADES;
-
-    private static final Constructor<?> processItemFactoryConstructor;
-    private static final Constructor<?> sellItemFactoryConstructor;
-    static {
-        try {
-            // These indices may change during updates, but so may the unmapped names. Best to just keep this up to date.
-            processItemFactoryConstructor = TradeOffers.class.getDeclaredClasses()[0].getDeclaredConstructor(ItemConvertible.class, int.class, int.class, Item.class, int.class, int.class, int.class);
-            processItemFactoryConstructor.setAccessible(true);
-
-            sellItemFactoryConstructor = TradeOffers.class.getDeclaredClasses()[7].getDeclaredConstructor(Item.class, int.class, int.class, int.class, int.class);
-            sellItemFactoryConstructor.setAccessible(true);
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
-        }
+    public static void mergeWanderingTraderOffers(Int2ObjectMap<TradeOffers.Factory[]> custom) {
+        List<TradeOffers.Factory> tier1 = new ArrayList<>(Arrays.asList(SkyBlockRegistry.Trades.VANILLA_WANDERING_TRADER_OFFERS.get(1)));
+        TradeOffers.Factory[] customTier1 = custom.get(1);
+        if (customTier1 != null) tier1.addAll(Arrays.asList(customTier1));
+        TradeOffers.WANDERING_TRADER_TRADES.put(1, tier1.toArray(new TradeOffers.Factory[0]));
+        List<TradeOffers.Factory> tier2 = new ArrayList<>(Arrays.asList(SkyBlockRegistry.Trades.VANILLA_WANDERING_TRADER_OFFERS.get(2)));
+        TradeOffers.Factory[] customTier2 = custom.get(2);
+        if (customTier2 != null) tier2.addAll(Arrays.asList(customTier2));
+        TradeOffers.WANDERING_TRADER_TRADES.put(2, tier2.toArray(new TradeOffers.Factory[0]));
     }
 
-    protected static TradeOffers.Factory newProcessItemFactory(ItemConvertible item, int secondCount, int price, Item sellItem, int sellCount, int maxUses) {
-        try {
-            return (TradeOffers.Factory) processItemFactoryConstructor.newInstance(item, secondCount, price, sellItem, sellCount, maxUses, 1);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    //private static final Constructor<?> processItemFactoryConstructor;
+    //private static final Constructor<?> sellItemFactoryConstructor;
+    
+    private static TradeOffers.Factory newProcessItemFactory(Item item, int secondCount, int price, Item sellItem, int sellCount, int maxUses) {
+        return new TradeOffers.SellItemFactory(new ItemStack(item), price, 1, maxUses, 1, 0.05f);
     }
 
-    protected static TradeOffers.Factory newSellItemFactory(Item item, int price, int count, int maxUses){
-        try {
-            return (TradeOffers.Factory) sellItemFactoryConstructor.newInstance(item, price, count, maxUses, 1);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    private static TradeOffers.Factory newSellItemFactory(Item item, int price, int count, int maxUses) {
+        return new TradeOffers.SellItemFactory(new ItemStack(item), price, 1, maxUses, 1, 0.05f);
     }
 
     static {
         List<TradeOffers.Factory> tier1Trades = new ArrayList<>(Arrays.asList(TradeOffers.WANDERING_TRADER_TRADES.get(1)));
         List<TradeOffers.Factory> tier2Trades = new ArrayList<>(Arrays.asList(TradeOffers.WANDERING_TRADER_TRADES.get(2)));
 
-        tier1Trades.addAll(Arrays.asList(
+        tier1Trades.addAll(
+            Arrays.asList(
             // Duplicatable after one trade
-            newSellItemFactory(Items.CHORUS_FLOWER, 5, 1, 12),
-            newSellItemFactory(Items.NETHER_WART, 5, 1, 12),
-            newSellItemFactory(Items.SWEET_BERRIES, 5, 1, 12),
-            newSellItemFactory(Items.SUNFLOWER, 5, 1, 12),
-            newSellItemFactory(Items.LILAC, 5, 1, 12),
-            newSellItemFactory(Items.ROSE_BUSH, 5, 1, 12),
-            newSellItemFactory(Items.PEONY, 5, 1, 12),
-            newsellItemFactory(Items.COCOA_BEANS, 5, 1, 12)
+                newSellItemFactory(Items.CHORUS_FLOWER, 5, 1, 12),
+                newSellItemFactory(Items.NETHER_WART, 5, 1, 12),
+                newSellItemFactory(Items.SWEET_BERRIES, 5, 1, 12),
+                newSellItemFactory(Items.SUNFLOWER, 5, 1, 12),
+                newSellItemFactory(Items.LILAC, 5, 1, 12),
+                newSellItemFactory(Items.ROSE_BUSH, 5, 1, 12),
+                newSellItemFactory(Items.PEONY, 5, 1, 12),
+                newSellItemFactory(Items.COCOA_BEANS, 5, 1, 12)
         ));
 
-        tier2Trades.addAll(Arrays.asList(
+        tier2Trades.addAll(
+            Arrays.asList(
             // Tier 2 Trades
-            newProcessItemFactory(Items.BUCKET, 1, 16, Items.LAVA_BUCKET, 1, 1),
-            newSellItemFactory(Items.HEART_OF_THE_SEA, 64, 1, 2)
+                newProcessItemFactory(Items.BUCKET, 1, 16, Items.LAVA_BUCKET, 1, 1),
+                newSellItemFactory(Items.HEART_OF_THE_SEA, 64, 1, 2)
         ));
     }
 }

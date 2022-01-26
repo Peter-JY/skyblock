@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "skyblock",
   "version": "${version}",
-  "name": "SkyBlock",
+  "name": "skyblock",
   "description": "Empty world generation and new ways to get certain items",
   "authors": [
     "Peter_JY",
@@ -11,8 +11,8 @@
     "skyrising"
   ],
   "contact": {
-    "sources": "https://github.com/skyrising/skyblock",
-    "issues": "https://github.com/skyrising/skyblock/issues"
+    "sources": "https://github.com/Peter-JY/Skyblock",
+    "issues": "https://github.com/Peter-JY/Skyblock/issues"
   },
   "license": "MIT",
   "environment": "*",

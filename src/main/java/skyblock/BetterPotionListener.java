@@ -1,5 +1,5 @@
 package skyblock;
-
+/*
 import net.minecraft.recipe.BrewingRecipeRegistry;
 import carpet.settings.ChangeListener;
 import carpet.settings.ParsedRule;
@@ -14,3 +14,4 @@ public class BetterPotionListener implements ChangeListener<Boolean>
         BrewingRecipeRegistry.registerDefaults();
     }
 }
+*/
